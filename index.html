@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Feedback Form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Slide Feedback</h1>
+            <p>Share your thoughts on the presentation slides. Your feedback helps us improve.</p>
+        </header>
+
+        <form id="feedbackForm" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" />
+                <span class="error-msg" id="nameError">Please enter your full name.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" />
+                <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="presentation">Presentation / Slide Deck <span class="required">*</span></label>
+                <select id="presentation" name="presentation">
+                    <option value="" disabled selected>Select a presentation…</option>
+                    <option value="lecture1">Lecture 1 – Introduction</option>
+                    <option value="lecture2">Lecture 2 – Core Concepts</option>
+                    <option value="lecture3">Lecture 3 – Advanced Topics</option>
+                    <option value="lecture4">Lecture 4 – Case Studies</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-msg" id="presentationError">Please select a presentation.</span>
+            </div>
+
+            <div class="form-group">
+                <label>Overall Rating <span class="required">*</span></label>
+                <div class="rating-group" role="radiogroup" aria-label="Overall rating from 1 to 5">
+                    <input type="radio" id="rating1" name="rating" value="1" />
+                    <label for="rating1">1</label>
+                    <input type="radio" id="rating2" name="rating" value="2" />
+                    <label for="rating2">2</label>
+                    <input type="radio" id="rating3" name="rating" value="3" />
+                    <label for="rating3">3</label>
+                    <input type="radio" id="rating4" name="rating" value="4" />
+                    <label for="rating4">4</label>
+                    <input type="radio" id="rating5" name="rating" value="5" />
+                    <label for="rating5">5</label>
+                </div>
+                <div class="rating-hint">
+                    <span>Poor</span>
+                    <span>Excellent</span>
+                </div>
+                <span class="error-msg" id="ratingError">Please select a rating.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="clarity">Clarity &amp; Organization</label>
+                <select id="clarity" name="clarity">
+                    <option value="" disabled selected>Select one…</option>
+                    <option value="very_clear">Very clear and well-organized</option>
+                    <option value="mostly_clear">Mostly clear</option>
+                    <option value="somewhat_clear">Somewhat clear</option>
+                    <option value="unclear">Difficult to follow</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" placeholder="What did you find most helpful? What could be improved?"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+
+        <div class="success-banner" id="successBanner" role="alert">
+            ✅ Thank you for your feedback! Your response has been recorded.
+        </div>
+    </div>
+
+    <footer>
+        CSCI-320 &nbsp;|&nbsp; Slide Feedback Form
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
